@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title> To Controller </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/todo-list.js"></script>
+    <link href="/assets/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>My To Do List</h1>
+    <div id="todo-table">
+        <form>
+            <input type="text" name="item" placeholder="To Add new Item..." required />
+            <button id="btnAdd" type="submit">Add</button>
+        </form>
+        <ul id="userlist-container">
+            <% todos.forEach(function(item){%>
+                <li>
+                    <%=item.item %>
+                </li>
+                <%}) %>
+
+        </ul>
+
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>
