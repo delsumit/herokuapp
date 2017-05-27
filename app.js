@@ -13,6 +13,6 @@ app.use(express.static('./public'));
 todoCtrl(app);
 
 
-app.listen(3000, function() {
-    console.log('Server started @ 3000');
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
 });
