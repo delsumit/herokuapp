@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160726204056",
     "express-handlebars": "registry:dt/express-handlebars#0.0.0+20160510002910"
   }
 }
