@@ -54,16 +54,11 @@ module.exports = {
         var conn = new SQLDB.Connection(SQL_CONFIG);
         conn.connect().then(function() {
 
-            var sqlTrans = new SQLDB.Transaction(conn);
-            sqlTrans.begin(function() {
-                var req = new SQLDB.Request(conn);
-                req.input('empname', SQLDB.VarChar(10), emp);
-                req.execute('spGetEmployeeByName', function(err, recordset, retVal) {
-                    sqlTrans.commit();
-                    //conn.close();
-                    callback(recordset[0]);
-                })
-
+            var req = new SQLDB.Request(conn);
+            req.input('empname', SQLDB.VarChar(10), emp);
+            req.execute('spGetEmployeeByName', function(err, recordset, retVal) {
+                conn.close();
+                callback(recordset[0]);
             })
         })
     },
