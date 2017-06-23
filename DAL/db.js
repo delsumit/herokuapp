@@ -1,10 +1,10 @@
 var SQLDB = require('mssql');
 
 const SQL_CONFIG = {
-    user: 'sa',
-    password: 'admin123',
-    server: '127.0.0.1',
-    database: 'SampleDB',
+    user: 'adminbs',
+    password: 'Bs#12345',
+    server: '208.91.198.59',
+    database: 'SampleDBs',
     pool: {
         max: 0,
         min: 0,

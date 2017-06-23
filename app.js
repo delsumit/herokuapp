@@ -21,6 +21,6 @@ app.use("/", webRoutes);
 app.use("/api", apiRoutes);
 
 
-app.listen((app.get('PORT')), function() {
+app.listen((app.get('PORT') | 5000), function() {
     console.log('Server Started.....');
 })
