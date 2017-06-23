@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "express-handlebars": "registry:dt/express-handlebars#0.0.0+20160510002910"
+  }
+}

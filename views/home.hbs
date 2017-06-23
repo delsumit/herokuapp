@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>{{title}}</h2>
+
+   
+    
+    <div class="row">
+        <div class="col-lg-11">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th> Firstname </th>
+                    <th> City </th>
+                    <th> Salary </th>
+                    <th> Action </th>
+                </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.firstname}}</td>
+                        <td>{{this.city}}</td>
+                        <td>{{this.salary}}</td>
+                        <td>
+                            <a href="/edit/{{this.empid}}" class="btn btn-primary">Edit</a>
+                            <a href="/edit/{{this.empid}}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <button id="btnTest">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btnTest").click(function(){
+        $.ajax({
+            url:'/api/employees',
+            method:'POST',
+            success:function(res){
+                console.log(res);
+            },
+            error:function(err){
+                console.log(err.responseText);
+            }            
+        })
+    })
+</script>
